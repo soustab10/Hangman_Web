@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" type="module"></script>
+</head>
+
+<body>
+
+    <div class="overall-container">
+
+        <div class="game-container">
+            <h1>hangman</h1>
+            <div class="attr">
+                Coded with &#10084;&#65039; by Soustab Haldar
+            </div>
+            <div class="toggle-container">
+
+                <input type="checkbox" id="switch" name="theme" /><label id="toggle-switch theme-switcher" for="switch">Toggle</label>
+            </div>
+            <button onClick="window.location.reload();" class="refresh-btn">New Game</button>
+            <button data-modal-target="#modal" class="user-btn">How to Play</button>
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="title">How to Play</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Welcome to Hangman. <br> Guess an unkown word in less than 6 tries, to put your name up on the Leaderboard.
+                    <br>
+                    <div id="modal-notes"> NOTE:<br> Easy Level:
+                        <ul>
+                            <li>Word Length: 0-6</li>
+                            <li>Time: 120 seconds</li>
+                        </ul>
+                        Medium Level:
+                        <ul>
+                            <li>Word Length: 7-9</li>
+                            <li>Time: 90 seconds</li>
+                        </ul>
+                        Hard Level:
+                        <ul>
+                            <li>Word Length: 10-&#8734;</li>
+                            <li>Time: 60 seconds</li>
+                        </ul>
+                        Hearts: You have 6 hearts to get the word successfully. <br> HINTS: You will get only 3 Hint.
+                        <ul>
+                            <li>
+                                Hint 1: Reveals the defintion of the word.
+                            </li>
+                            <li>
+                                Hint 2: Reveals missing letters of the word.
+                            </li>
+                            <li>
+                                Hint 3: Reveal missing letters of the word.
+                            </li>
+                        </ul>
+                        <br> Keyboard: You can either use your physical keyboard or the on-screen keyboard. <br> To kepp track of the letters that are not present in the word, refer the "Letters not present" section.
+                    </div>
+                </div>
+            </div>
+            <button data-modal-target="#modal2" class="user-btn" id="leaderboard-btn">Show Leaderboard</button>
+            <div class="modal" id="modal2">
+                <div class="modal-header">
+                    <div class="title">Leaderboard</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Leaderboard here!
+
+
+                    <div class="table-container">
+                        <div id="dvTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlay"></div>
+            <br>
+            <div class="ecbox">
+                <p class="timer">Timer: </p>
+                <input type="text" id="txt" />
+                <div class="hint-container"> <button class="hint-btn">Show Hints</button></div>
+                <div class="lives-left">
+                    &#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;
+                </div>
+            </div>
+
+            <div class="game-box">
+
+
+                <svg class="figure">
+              <!-- Stand -->
+              <line x1="25%" y1="5%" x2="65%" y2="5%" />
+              <line x1="65%" y1="5%" x2="65%" y2="20%" />
+              <line x1="25%" y1="5%" x2="25%" y2="95%" />
+              <line x1="5%" y1="95%" x2="45%" y2="95%" />
+    
+              <!-- Head -->
+              <circle r="10%" cx="65%" cy="30%" class="body-part" />
+    
+              <!-- Body -->
+              <line x1="65%" y1="40%" x2="65%" y2="60%" class="body-part" />
+    
+              <!-- Arms -->
+              <line x1="50%" y1="40%" x2="65%" y2="50%" class="body-part" />
+              <line x1="80%" y1="40%" x2="65%" y2="50%" class="body-part" />
+    
+              <!-- Legs -->
+              <line x1="65%" y1="60%" x2="80%" y2="70%" class="body-part" />
+              <line x1="65%" y1="60%" x2="50%" y2="70%" class="body-part" />
+            </svg>
+                <div class="content">
+                    <ul class="word-wrap"></ul>
+                    <div class="not-present">
+                        <h2>Letters not present:</h2>
+                        <p></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="warning-letter">
+                <p>Letter has already been entered!</p>
+            </div>
+            <div class="game-bg"></div>
+            <div class="display-msg">
+                <p class="msg-info"></p>
+
+                <button id="play" class="play">Play Again</button>
+            </div>
+            <div class="key-container"></div>
+
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

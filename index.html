@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app2.js" type="module"></script>
+</head>
+
+<body>
+
+    <div class="overall-container">
+
+        <div class="game-container">
+            <h1>hangman</h1>
+            <div class="toggle-container">
+
+                <input type="checkbox" id="switch" name="theme" /><label id="toggle-switch theme-switcher" for="switch">Toggle</label>
+            </div>
+
+            <button data-modal-target="#modal" class="user-btn">How to Play</button>
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="title">How to Play</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Welcome to Hangman. <br> Guess an unkown word in less than 6 tries, to put your name up on the Leaderboard.
+                    <br>
+                    <div id="modal-notes"> NOTE:<br> Easy Level:
+                        <ul>
+                            <li>Word Length: 0-6</li>
+                            <li>Time: 120 seconds</li>
+                        </ul>
+                        Medium Level:
+                        <ul>
+                            <li>Word Length: 7-9</li>
+                            <li>Time: 90 seconds</li>
+                        </ul>
+                        Hard Level:
+                        <ul>
+                            <li>Word Length: 10-&#8734;</li>
+                            <li>Time: 60 seconds</li>
+                        </ul>
+                        Hearts: You have 6 hearts to get the word successfully. <br> HINTS: You will get only 3 Hint.
+                        <ul>
+                            <li>
+                                Hint 1: Reveals the defintion of the word.
+                            </li>
+                            <li>
+                                Hint 2: Reveals missing letters of the word.
+                            </li>
+                            <li>
+                                Hint 3: Reveal missing letters of the word.
+                            </li>
+                        </ul>
+                        <br> Keyboard: You can either use your physical keyboard or the on-screen keyboard. <br> To kepp track of the letters that are not present in the word, refer the "Letters not present" section.
+                    </div>
+                </div>
+            </div>
+            <button data-modal-target="#modal2" class="user-btn" id="leaderboard-btn">Show Leaderboard</button>
+            <div class="modal" id="modal2">
+                <div class="modal-header">
+                    <div class="title">Leaderboard</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body modal-leader">
+                    <div class="table-container">
+                        <div id="dvTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlay"></div>
+            <br><br><br>
+            <form class="form-todo">
+                <input type="text" name="" id="name-form" placeholder="Enter your name" /><br>
+                <form method="get" action="#">
+                    <p id="level-select">Select Level:</p>
+                    <p>
+
+                        <select name="favoriteOnly " id="lvlchk">
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                      </select>
+                    </p>
+
+                </form>
+
+                <button class="button-two lvl-btn-tournament "><span>Start Game</span></button>
+                <!-- <input type="submit " value="Start Game " class="lvl-btn-tournament " /> -->
+            </form>
+            <div class="attr">
+                Coded with &#10084;&#65039; by Soustab Haldar
+            </div>
+        </div>
+
+
+
+
+
+</body>
+
+</html>
