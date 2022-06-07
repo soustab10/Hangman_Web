@@ -109,6 +109,7 @@
         }
         
         .keyboard-button-keys {
+            all: unset;
             background-color: var(--bg);
             width: 5.75rem;
             height: 4rem;

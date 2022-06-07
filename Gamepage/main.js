@@ -187,19 +187,18 @@ const startGamebutton = document.querySelector('.lvl-btn-tournament');
 
 
 
-console.log("hello:");
-console.log(userName);
-console.log(level);
+console.log(`Hello: ${userName} , you are playing level : ${level}`);
+console.log(`Also if you think the answer,will magically appear here! Then you are very wrong!`);
 keyboardGenerate();
 
 function getWordbyLevel(response) {
     wordList = response;
-    console.log(wordList);
+    //console.log(wordList);
     selectedWord = wordList[0].word;
     selectedDef = wordList[0].definition;
     selectedWord = selectedWord.toLowerCase();
 
-    console.log(selectedWord);
+    //console.log(selectedWord);
     if (level == 0) {
         if (selectedWord.length >= 7) {
             getWord();
@@ -236,7 +235,7 @@ function initializeWord() {
     //selectedDef = wordList[0].definition;
     //selectedWord = selectedWord.toLowerCase();
 
-    console.log(selectedWord);
+    //console.log(selectedWord);
     const noOfLetters = selectedWord.length;
     for (let i = 0; i < noOfLetters; i++) {
         const listItem = document.createElement('li');
@@ -335,7 +334,7 @@ function passthroughFunction(ev) {
 
 function check(character, letterKey) {
     let letterElements = document.querySelectorAll('.word-wrap .letter');
-    console.log("haha");
+    //console.log("haha");
 
 
     if (
@@ -557,7 +556,7 @@ buttonHint.onclick = function() {
     console.log(hintShown);
     if (hintShown == 0) {
         hintShown++;
-        console.log("Hint:")
+        console.log("Hint Shown:")
         indication.innerHTML = `Definition:` + selectedDef;
         indication.classList.add('visible');
 
@@ -569,12 +568,12 @@ buttonHint.onclick = function() {
     }
     if (hintShown == 1 || hintShown == 2) {
         hintShown++;
-        console.log("Hint:")
-            //letter reveal
+        //console.log("Hint:")
+        //letter reveal
         let letterElements = document.querySelectorAll('.word-wrap .letter');
         for (let i = 97; i <= 122; i++) {
             let charac = String.fromCharCode(i);
-            console.log(charac);
+            //console.log(charac);
 
             if (selectedWord.includes(charac) && !(correctLetters.includes(charac))) {
 

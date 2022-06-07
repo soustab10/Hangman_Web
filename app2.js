@@ -28,7 +28,7 @@ let userName;
 
 
 var themeStatus = sessionStorage.getItem('theme');
-console.log(2);
+
 const backdrop = document.querySelector('.game-bg');
 //console.log(themeStatus);
 var checkbox = document.querySelector('input[name=theme]');
