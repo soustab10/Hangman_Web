@@ -104,6 +104,7 @@
     /* Default Table Style */
     
     #dvTable {
+        border: none;
         background: var(--bg-grad);
         min-width: 5rem;
         max-height: 50%;
