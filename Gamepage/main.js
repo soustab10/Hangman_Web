@@ -74,6 +74,12 @@ const overlay = document.getElementById('overlay')
 const LeaderboardButton = document.getElementById('leaderboard-btn')
 LeaderboardButton.addEventListener('click', leader)
 let tableContent = document.getElementById('dvTable');
+
+
+
+const playBtn = document.getElementById('play');
+const indication = document.querySelector(".warning-letter");
+const bodyParts = document.getElementsByClassName('body-part');
 var txt = document.getElementById('txt')
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -192,33 +198,23 @@ console.log(`Also if you think the answer,will magically appear here! Then you a
 keyboardGenerate();
 
 function getWordbyLevel(response) {
+    indication.classList.add('visible');
+    indication.innerHTML = "Wait! Letter is loading!";
     wordList = response;
     //console.log(wordList);
     selectedWord = wordList[0].word;
     selectedDef = wordList[0].definition;
     selectedWord = selectedWord.toLowerCase();
-
+    let lenWord = selectedWord.length;
     //console.log(selectedWord);
-    if (level == 0) {
-        if (selectedWord.length >= 7) {
-            getWord();
-        } else {
-            initializeWord();
-        }
-    }
-    if (level == 1) {
-        if (selectedWord.length < 8 && selectedWord.length >= 10) {
-            getWord();
-        } else {
-            initializeWord();
-        }
-    }
-    if (level == 2) {
-        if (selectedWord.length <= 10) {
-            getWord();
-        } else {
-            initializeWord();
-        }
+    if (level == 0 && lenWord <= 6) {
+        initializeWord();
+    } else if (level == 1 && (lenWord >= 7 && lenWord <= 9)) {
+        initializeWord();
+    } else if (level == 2 && (lenWord >= 10 && lenWord <= 14)) {
+        initializeWord();
+    } else {
+        getWord();
     }
 }
 getWord();
@@ -233,8 +229,9 @@ function initializeWord() {
     //console.log(wordList);
     //selectedWord = wordList[0].word;
     //selectedDef = wordList[0].definition;
-    //selectedWord = selectedWord.toLowerCase();
-
+    indication.classList.remove('visible');
+    selectedWord = selectedWord.toLowerCase();
+    console.log(selectedWord.length);
     //console.log(selectedWord);
     const noOfLetters = selectedWord.length;
     for (let i = 0; i < noOfLetters; i++) {
@@ -245,11 +242,6 @@ function initializeWord() {
 }
 
 
-
-
-const playBtn = document.getElementById('play');
-const indication = document.querySelector(".warning-letter");
-const bodyParts = document.getElementsByClassName('body-part');
 
 let incorrectLetters = [];
 let correctLetters = [];
