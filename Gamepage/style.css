@@ -18,6 +18,7 @@
             --bg-panel: #555454;
             --color-headings: #65c1e5;
             --color-text: #181717;
+            --home-btn: #bca0dc;
         }
         
         html[data-theme='dark'] {
@@ -28,6 +29,7 @@
             --bg-panel: #434343;
             --color-headings: #507fc6;
             --color-text: #fff6f6;
+            --home-btn: #52307c;
         }
         
         body {
@@ -93,9 +95,22 @@
             color: var(--color-text);
             font-family: 'Playfair Display', serif!important;
             font-size: 3.25rem;
-            padding-top: 0.1rem;
+            margin-top: 0rem;
             padding-bottom: 0rem;
             margin-bottom: 0rem
+        }
+        
+        .home-btn {
+            height: 100%;
+            width: 5rem;
+            background-color: var(--home-btn) !important;
+        }
+        
+        .top-cont {
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            justify-content: space-between;
         }
         
         #header-span {
@@ -108,14 +123,6 @@
         
         h1:hover {
             background-size: 100%;
-        }
-        
-        .fa {
-            color: var(--color-text);
-            font-size: 1rem;
-            position: absolute;
-            max-height: 2.2rem;
-            max-width: 2.2rem;
         }
         
         #txt {
@@ -396,12 +403,6 @@
         
         html {
             font-size: 62.5%;
-        }
-        
-        body {
-            font-family: 'Rubik', sans-serif;
-            color: #fff;
-            background-color: #233d4d;
         }
         
         .container {

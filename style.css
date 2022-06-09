@@ -480,8 +480,8 @@
     .letter {
         text-align: center;
         display: block;
-        height: 4rem;
-        width: 3rem;
+        height: 3.5rem;
+        width: 2.75rem;
         margin-right: 0.8rem;
         border-bottom: 4px #fff solid;
     }
