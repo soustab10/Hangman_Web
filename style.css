@@ -1,16 +1,17 @@
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
     * {
-        color: var(--color-text);
         font-family: 'Poppins', sans-serif!important;
     }
     
     html {
         height: 100%;
-        /* font-family: 'Montserrat'; */
         display: grid;
         align-items: center;
         justify-items: center;
+    }
+    
+    html[data-theme="light"] {
         --bg-base: #a8b3c4;
         --bg-grad: linear-gradient(315deg, #b8c6db 0%, #e3e7eb 74%);
         --bg-grad-modal: linear-gradient(135deg, #b8c6db 0%, #e3e7eb 74%);
